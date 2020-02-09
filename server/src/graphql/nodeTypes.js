@@ -1,4 +1,4 @@
-import {GraphQLID, GraphQLObjectType, GraphQLString} from "graphql";
+const {GraphQLID, GraphQLObjectType, GraphQLString} = require("graphql");
 
 const noteType = new GraphQLObjectType({
     name: 'Note',

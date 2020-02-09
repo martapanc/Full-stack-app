@@ -1,6 +1,6 @@
-import {GraphQLID, GraphQLString} from "graphql";
+const {GraphQLID, GraphQLString} = require("graphql");
 
-const { noteType } = require('../nodeTypes');
+const {noteType} = require('../nodeTypes');
 const NoteService = require('../../services/NoteService');
 
 const CreateNoteMutation = {

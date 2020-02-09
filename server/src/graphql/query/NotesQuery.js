@@ -1,4 +1,4 @@
-import {GraphQLList} from "graphql";
+const {GraphQLList} = require('graphql');
 
 const NoteService = require('../../services/NoteService');
 const {noteType} = require('../nodeTypes');
