@@ -255,4 +255,4 @@ temp/
 
 # End of https://www.gitignore.io/api/node,intellij,webstorm
 
-server/src/config/config.json
+src/config/config.json

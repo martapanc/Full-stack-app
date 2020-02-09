@@ -4,14 +4,21 @@ const util = require('util');
 
 let mongoDB;
 
-const connection = "mongodb+srv://%s:%s@cluster0-yx4fl.azure.mongodb.net/test?retryWrites=true&w=majority";
+const connection =
+    'mongodb+srv://%s:%s@cluster0-yx4fl.azure.mongodb.net/test?retryWrites=true&w=majority';
 
 const setupDB = callback => {
-    const uri = util.format(connection, dbCredentials.username, dbCredentials.password);
+    const uri = util.format(
+        connection,
+        dbCredentials.username,
+        dbCredentials.password
+    );
 
-    MongoClient.connect(uri, {
+    MongoClient.connect(
+        uri,
+        {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
         },
         (error, client) => {
             mongoDB = client.db('full-stack-server');
@@ -20,12 +27,13 @@ const setupDB = callback => {
                 return callback(error);
             }
 
-            return callback("Connected to Database")
-        });
+            return callback('Connected to Database');
+        }
+    );
 };
 
 const getDB = () => {
     return mongoDB;
 };
 
-module.exports = {setupDB, getDB};
+module.exports = { setupDB, getDB };

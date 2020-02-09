@@ -1,8 +1,7 @@
-const {GraphQLList} = require('graphql');
+const { GraphQLList } = require('graphql');
 
 const NoteService = require('../../services/NoteService');
-const {noteType} = require('../nodeTypes');
-
+const { noteType } = require('../nodeTypes');
 
 const NotesQuery = {
     type: GraphQLList(noteType),
@@ -10,7 +9,7 @@ const NotesQuery = {
     resolve: async () => {
         const noteService = new NoteService();
         return noteService.getAllNotes();
-    }
+    },
 };
 
-module.exports = {NotesQuery};
+module.exports = { NotesQuery };

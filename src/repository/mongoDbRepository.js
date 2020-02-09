@@ -47,12 +47,15 @@ class MongoDbRepo {
 
     deleteOne(_id) {
         return new Promise((resolve, reject) => {
-            this.collection.findOneAndDelete({ _id: ObjectId(_id) }, (err, data) => {
-                if (err) {
-                    reject(err);
+            this.collection.findOneAndDelete(
+                { _id: ObjectId(_id) },
+                (err, data) => {
+                    if (err) {
+                        reject(err);
+                    }
+                    resolve(data);
                 }
-                resolve(data);
-            });
+            );
         });
     }
 
